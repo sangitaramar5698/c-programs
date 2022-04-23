@@ -1,0 +1,81 @@
+//stack operations  
+#include <stdio.h>
+//stack needs an array with standard sizeof
+int max_size=10;
+int top=-1;
+int a[100];
+void push(int num){
+    if(!isfull()){
+        printf("inserted successfully");
+        top++;
+        a[top]=num;
+        
+    }
+    else{
+        printf("\nstack is full cant insert %d",num);
+    }
+}
+void show(){
+    for(int i=0;i<=top;i++){
+        printf("\n %d",a[i]);
+    }
+}
+int isfull(){
+    if(top==max_size){
+        printf("stack is full");
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+int isempty(){
+    if(top==-1){
+        return 1;
+        
+    }
+    else{
+        return 0;
+    }
+}
+void pop(){
+    if(!isempty()){
+    printf("\n%d deleted successfully",a[top]);
+    top=top-1;
+    }
+    else{
+        printf("\nstack is empty");
+    }
+    
+}
+int main()
+{
+    push(2);
+    push(6);
+    push(5);
+    push(3);
+    push(2);
+    push(1);
+    push(3);
+    push(9);
+    push(10);
+    push(11);
+    push(12);
+    push(13);
+    show();
+    pop();
+    show();
+    
+    pop();
+    pop();pop();
+    pop();
+    pop();
+    pop();
+    pop();pop();pop();pop();
+    pop();
+    pop();pop();
+    
+
+    return 0;
+}
+
